@@ -5,9 +5,10 @@ import Home from "emp_home/Home";
 import "./index.css";
 
 const App = () => (
-  <div className="container">
+  <main className="mt-6">
+    <hr></hr>
     <Home></Home>
-  </div>
+  </main>
 );
 
 ReactDOM.render(<App />, document.getElementById("app"));
