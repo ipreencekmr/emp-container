@@ -1,15 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+// eslint-disable-next-line import/no-unresolved
 import Home from "emp_home/Home";
 
-import "./index.css";
-
 const App = () => (
-  <div className="container">
-    <Home></Home>
-  </div>
+    <main className="mt-6">
+        <hr></hr>
+        <Home></Home>
+    </main>
 );
 
-ReactDOM.render(<App />, document.getElementById("app"));
+const globalApp = document.getElementById("app");
+
+const root = createRoot(globalApp);
+
+root.render(<App />);
 
 export default App;
