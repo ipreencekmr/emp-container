@@ -14,10 +14,10 @@ app.get("*", (req, res) => {
 // Start the server
 const port = 3002;
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`emp-container is running on port ${port}`);
 });
 
 process.on("SIGINT", () => {
-    console.info("Interrupted")
+    console.info("> Interrupted")
     process.exit(0)
 });

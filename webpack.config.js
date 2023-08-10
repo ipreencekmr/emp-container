@@ -5,7 +5,9 @@ const deps = require("./package.json").dependencies;
 // eslint-disable-next-line no-unused-vars
 module.exports = (_, argv) => ({
     output: {
-        publicPath: "http://localhost:3002/",
+        publicPath: argv.mode == "development" ? 
+            "http://localhost:3002/":
+            "http://app.learn-coding.xyz:3002/",
     },
 
     resolve: {
@@ -45,7 +47,9 @@ module.exports = (_, argv) => ({
             name: "emp_container",
             filename: "remoteEntry.js",
             remotes: {
-                emp_home: "emp_home@http://localhost:3003/remoteEntry.js",
+                emp_home: argv.mode == "development" ? 
+                    "emp_home@http://localhost:3003/remoteEntry.js":
+                    "emp_home@http://app.learn-coding.xyz:3003/remoteEntry.js",
             },
             exposes: {
                 "./Container": "./src/App.jsx",
